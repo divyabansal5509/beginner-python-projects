@@ -446,7 +446,130 @@ except ValueError:
 
 ## Classes
 
+Class Point:
+    def move(self):
+       print("move")
 
+    def draw(self):
+       print("draw")
+
+point1 = Point()
+point1.move()
+point1.x = 10 
+point1.y = 20
+print(point1.x) //10
+point1.draw()
+
+point2 = Point()
+point2.x = 1
+print(point2.x)  //1
+
+## Constructor
+
+
+Class Point:
+    def __init__(self,x,y):
+       self.x = x
+       self.y = y
+
+    def move(self):
+       print("move")
+
+    def draw(self):
+       print("draw")
+
+point = Point(10,20)
+point.x = 11
+print(point.x)
+
+**Exercise:**
+
+class Person:
+    def __init__(self,name):
+       self.name = name
+    def talk(self):
+        print(f"Hi, I am {self.name}")
+
+john = Person("Divi")
+john.talk()
+
+bob = Person("Bob Smith")
+bob.talk()
+
+## Inheritance
+
+class Mammal:
+   def walk(self):
+      print("walk")
+
+class Dog(Mammal):
+    def bark(self):
+      print("bark")
+
+class Cat(Mammal)::
+    pass
+ 
+
+dog1 = Dog()
+dog1.walk()
+dog1.bark()
+
+
+## MODULES
+
+- we break our code across multiple files,each file called MODULE
+- it should contain the related functions and classes then we can import a module.
+Syntax:
+import convertors
+from convertors import kg_to_lbs
+
+kg_to_lbs(100)
+convertors.kg_to_lbs(80)
+
+## Packages
+
+- container for multiple modules
+- directory or folder
+- if we create a file name __init__.py ,python treat the folder as package
+
+## Built in modules
+
+import random
+
+for i in range(3):
+    print(random.random())
+
+for i in range(3):
+    print(random.randint(10,20))
+
+**Randomnly choosing leader**
+
+import random
+members = ["div","ron","shiv","ben","kit"]
+leader = random.choice(members)
+print(leader)
+
+**Exercise - choosing random 2 values from dice**
+
+import random
+
+class Dice():
+     def roll(self):
+        first = random.randint(1,6)
+        second = random.randint(1,6)
+        return first, second
+
+dice2 = Dice()
+print(dice2.roll())
+
+## Working with directories:
+
+from pathlib import Path
+
+path = Path("emails")
+print(path.exists())
+print(path.mkdir())
+print(path.rmdir())
 
 
 
