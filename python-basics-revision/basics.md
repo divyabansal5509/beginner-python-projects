@@ -248,7 +248,203 @@ for x_count in numbers:
 
 ## LIST
 
+names = ['abhay','bhanu', 'shanya','divya','romi']
+names[0]='Jon'
+print(names)
+print(names[1])
+print(names[2:4])
+   
+Exercise:
+Write a program to find the largest number in a list.
 
+lis = [ 23,45,13,87,38,71,32]
+largest = lis[0]
+for i in range(len(lis)):
+    if lis[i]>largest:
+        largest = lis[i]
+
+print("Largest number:", largest)
+
+## 2D List
+
+matrix = [
+      [1,2,3],
+      [4,5,6],
+      [7,8,9]
+]
+matrix[0][1]=22
+print(matrix[0][1])
+
+for row in matrix:
+   for item in row:
+       print(item)
+    
+## List Methods:
+
+numbers = [5,2,1,7,4]
+numbers.append(20)   //append at last
+numbers.insert(0,10) //insert at any index
+numbers.remove(5)   //remove the number
+numbers.clear()     //clear the list
+numbers.pop()       //pop the last element
+numbers.index(5)    //give index of 5
+print(50 in numbers) //find 50 in list
+
+num = [5,2,1,5,7,4]
+num2 = num.copy()
+num.append(20)
+print(num2)
+print(num.count(5))
+num.sort()     //ascending
+num.reverse()  //descending
+print(num)
+
+**Exercise: remover duplicated from list.**
+
+lis=[2,5,6,5,6,43,54,34,54,11]
+uniques =[]
+for item in lis:
+   if item not in uniques:
+       uniques.append(item)
+print(uniques)
+
+ ## Tuple
+
+ - we cannot modify or add something or delete
+
+ numbers = (1,2,3)
+ print(numbers[0])
+
+### unpacking
+
+coordinates = (1,2,3)
+x , y, z = coordinates
+print(x)  //1
+print(y)  //2
+
+## Dictionaries
+
+customer ={
+    "name" : "Divya Bansal",
+    "age"  : "30",
+    "is_verified" : True
+}
+
+customer["birthdate"] = "July 2 1987"
+print(customer["birthdate"])
+print(customer["name"])  //Divya Bansal
+print(customer.get["date"])  //None
+print(customer.get["date","Sep 1"]) //Sep 1
+
+**Exercise: Numbers in letters(1-one,2-two)**
+
+phoneNo = input("PhoneNo: ")
+digits_mapping = {
+    "1": "One",
+    "2" : "Two",
+    "4" : "Four",
+    "5" : "Five",
+    "6" : "Six",
+    "3" : "Three"
+}
+output = ""
+for ch in phoneNo:
+      output += digits_mapping.get(ch, "!") + " "
+print(output)
+
+### Emoji Convertor
+
+message = input(">")
+words = message.split(' ')
+emojis = {
+    ":)" : "😊",
+    ":(" : "😔",  
+}
+output =" "
+for word in words:
+    output += emojis.get(word,word)
+print(output)
+
+## FUNCTIONS:
+
+def greet_user():
+    print("HI there!")
+    print("Welcome aborad")
+
+print("Start")
+greet_user()
+print("Finish")
+
+## Parameters
+
+def greet_user(first_name,last_name):
+    print(f"HI {first_name} {last_name}!")
+    print("Welcome abroad")
+
+print("Start")
+greet_user("Div","Ban") //positional argument
+greet_user("Pal","Het")
+print("Finish")
+
+## Keyword Arguments
+-position argument then keyword argument
+- use positional when having numerical value
+- or for increasing readability
+
+def greet_user(first_name,last_name):
+    print(f"HI {first_name} {last_name}!")
+    print("Welcome abroad")
+
+print("Start")
+greet_user(last_name ="Ban",first_name="Div") //keyword argument
+greet_user("Pal","Het")
+print("Finish")
+
+## Return Statement
+- by default all function return None
+-you can return value suing return statement
+def square(number):
+    return number*number
+
+a=square(3)
+print(a)
+
+## Creating a reusable value
+
+- Emoji Convertor program
+
+def emoji_convertor():
+    words = message.split(' ')
+    emojis = {
+        ":)" : "😊",
+        ":(" : "😔",  
+    }
+    output =" "
+    for word in words:
+        output += emojis.get(word,word)
+    return output
+
+message = input(">")
+result = emoji_convertor(message)
+print(result)
+
+## Exceptions:
+- to handle different types fo exceptions
+
+try:
+    age = int(input("Age: "))
+    income = 20000
+    risk = income/age
+    print(age)
+except ZeroDivisionError:
+    print("Age cannot be 0")
+except ValueError:
+    print("Invalid Value")
+
+### Comments
+- to help understand the code( why ,hows)
+
+## Classes
 
 
 
